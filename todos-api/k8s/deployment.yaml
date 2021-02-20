@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todos-api
+  labels:
+    app: todos-api
+    redis-access: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todos-api
+  template:
+    metadata:
+      labels:
+        app: todos-api
+    spec:
+      containers:
+      - name: todos-api
+        image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-todos-api:latest
+        ports:
+        - containerPort: 8082
