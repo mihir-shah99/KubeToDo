@@ -18,3 +18,19 @@ spec:
       containers:
       - name: log-message-processor
         image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-log-message-processor:latest
+        env:
+        - name: REDIS_CHANNEL
+          valueFrom:
+            configMapKeyRef:
+              name: log-message-processor
+              key: REDIS_CHANNEL
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: log-message-processor
+              key: REDIS_HOST
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: log-message-processor
+              key: REDIS_PORT

@@ -17,5 +17,21 @@ spec:
       containers:
       - name: frontend
         image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-frontend:latest
-        ports:
+        env:
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: frontend
+              key: PORT
+        - name: AUTH_API_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: frontend
+              key: AUTH_API_ADDRESS
+        - name: TODOS_API_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: frontend
+              key: TODOS_API_ADDRESS
+        ports: 
         - containerPort: 8080

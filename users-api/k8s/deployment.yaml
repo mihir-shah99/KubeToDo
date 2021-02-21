@@ -17,5 +17,16 @@ spec:
       containers:
       - name: users-api
         image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-users-api:latest
+        env:
+        - name: SERVER_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: users-api
+              key: SERVER_PORT
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: users-api
+              key: JWT_SECRET
         ports:
         - containerPort: 8083

@@ -17,5 +17,21 @@ spec:
       containers:
       - name: auth-api
         image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-auth-api:latest
+        env:
+        - name: AUTH_API_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: auth-api
+              key: AUTH_API_PORT
+        - name: USERS_API_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: auth-api
+              key: USERS_API_ADDRESS
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: auth-api
+              key: JWT_SECRET
         ports:
         - containerPort: 8081
