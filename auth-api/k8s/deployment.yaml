@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: auth-api
-        image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-auth-api:latest
+        image: mihirshah99/auth:latest
         env:
         - name: AUTH_API_PORT
           valueFrom:

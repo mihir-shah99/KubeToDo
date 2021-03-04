@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: log-message-processor
-        image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-log-message-processor:latest
+        image: mihirshah99/log-message:latest
         env:
         - name: REDIS_CHANNEL
           valueFrom:

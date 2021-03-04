@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: todos-api
-        image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-todos-api:latest
+        image: mihirshah99/todos:latest
         env:
         - name: TODO_API_PORT
           valueFrom:

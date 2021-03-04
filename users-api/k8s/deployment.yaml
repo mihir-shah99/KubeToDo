@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: users-api
-        image: 561341012850.dkr.ecr.us-east-1.amazonaws.com/team23-users-api:latest
+        image: mihirshah99/users:latest
         env:
         - name: SERVER_PORT
           valueFrom:
