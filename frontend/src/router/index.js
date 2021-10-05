@@ -31,3 +31,4 @@ function requireLoggedIn (to, from, next) {
     next()
   }
 }
+

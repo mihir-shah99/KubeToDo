@@ -5,9 +5,8 @@ metadata:
   labels:
       name: frontend
 spec:
-  ingressClassName: "nginx"
   rules:
-  - host: frontend.team23.k8s-ctf.com
+  - host: frontend.yolo.yolo.com
     http:
       paths:
         - backend:
