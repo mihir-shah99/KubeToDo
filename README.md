@@ -21,4 +21,4 @@ Each container is stored in Elastic Container Registry (ECR) and EKS pulls the c
 ## Security
 All microservices are governed by Network policies and RBAC to enforce security and access control within the application. For example, the frontend pod is accessible to all incoming requests, but front end pod can only communicate with Auth API and Todos API. Also Users API can only communicate to the Auth API, and Todos API can only communicate to the redis server.  
 This is enforced by keeping in mind the security design principle of Least Privilege.  
-The application is 
+The application uses JWT tokens for managing authentication and authorization. These tokens are stored within the databsae for authenticated users. Each pod has it's own documentation for the working and debugging refer to the folder documentation for each pod.
