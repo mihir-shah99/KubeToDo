@@ -16,3 +16,9 @@ The microservice distribution is as follows:
 ## Flowchart:
 <p align="center"> <img src="assets/KubeToDo.png"></p>
 
+## Deployment
+Each container is stored in Elastic Container Registry (ECR) and EKS pulls the container images from the ECR and deploys them as pods in k8s. The entire deployment strategy is constructed and deployed behind AWS' CDN infrastructure, and all the incoming requests are handled by the AWS' network Load Balancer. Also, NGINX ingress controller is configured as a deployment controller to route the incoming traffic data within the Kubernetes Pods.
+## Security
+All microservices are governed by Network policies and RBAC to enforce security and access control within the application. For example, the frontend pod is accessible to all incoming requests, but front end pod can only communicate with Auth API and Todos API. Also Users API can only communicate to the Auth API, and Todos API can only communicate to the redis server.  
+This is enforced by keeping in mind the security design principle of Least Privilege.  
+The application is 
