@@ -1,3 +1,4 @@
 redis==2.10.6
 py_zipkin==0.11.0
 requests
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
